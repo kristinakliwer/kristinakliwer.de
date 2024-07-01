@@ -1,0 +1,28 @@
+.nav {
+  @include list-reset();
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: space(s);
+}
+
+.nav-item {
+  a {
+    text-decoration: none;
+    font-family: $font-anton;
+    font-size: 2rem;
+    font-weight: font-weight(normal);
+    line-height: 1.4;
+    letter-spacing: -1px;
+    color: var(--color-link);
+
+    &:visited {
+      color: var(--color-link-visited);
+    }
+
+    &:hover {
+      color: var(--color-link-hover);
+    }
+  }
+}

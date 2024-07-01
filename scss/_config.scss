@@ -1,0 +1,90 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/crimson-text-v19-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/crimson-text-v19-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/crimson-text-v19-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/anton-v25-latin-regular.woff2') format('woff2');
+}
+
+$font-crimson: 'Crimson Text', Arial, sans-serif;
+$font-anton: 'Anton', Arial, sans-serif;
+
+$color-text: #222222;
+$color-creme: #E4E2DD;
+$color-orange: #DB4A2B;
+$color-darkorange: #a43b0b;
+$color-brown: #3D3B3A;
+$color-lightbrown: #746866;
+
+html {
+  --color-body-bg: #{$color-creme};
+  --color-text: #{$color-text};
+  --color-link: #{$color-orange};
+  --color-small-links: #{$color-brown};
+  --color-small-links-visited: #{$color-brown};
+  --color-small-links-hover: #{$color-lightbrown};
+  --color-link-visited: #{$color-orange};
+  --color-link-hover: #{$color-darkorange};
+  --color-scroll-track: #{$color-brown};
+  --color-selection-bg: #{$color-brown};
+  --color-selection-text: #{$color-creme};
+  --color-subline: #{$color-lightbrown};
+}
+
+$breakpoints: (
+  xxs: 0,
+  xs: 320px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$space: (
+  xs: 0.5rem,
+  xss: 0.75rem,
+  s: 1rem,
+  sm: clamp(1rem, 0.8261rem + 0.8696vw, 1.5rem),
+  m: 1.5rem,
+  ml: clamp(1.5rem, 1.3261rem + 0.8696vw, 2rem),
+  l: 2rem,
+);
+
+$font-weight: (
+  light: 300,
+  normal: 400,
+  medium: 500,
+  bold: 700,
+);
+
+$font-size: (
+  xs: 0.75rem,
+  s: 0.875rem,
+  m: 1rem,
+  l: 1.25rem,
+);

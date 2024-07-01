@@ -1,0 +1,90 @@
+html {
+  font-size: 1rem;
+}
+
+body {
+  background-color: var(--color-body-bg);
+  font-size: 1.25rem;
+  font-family: $font-crimson;
+  color: var(--color-text);
+  line-height: 1.6;
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-scroll-track);
+  }
+
+  &.scrolllock {
+    overflow: hidden;
+  }
+}
+
+a {
+  @include focus-outline-style();
+
+  position: relative;
+  display: inline-flex;
+  color: var(--color-small-links);
+
+  &:visited {
+    color: var(--color-small-links-visited);
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: var(--color-small-links-hover);
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-link);
+    transform-origin: 100% 50%;
+    transform: scale3d(0, 1, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 1, 0.8, 1);
+    z-index: 1;
+  }
+
+  &:hover::before {
+    transform-origin: 0 50%;
+    transform: scale3d(1, 1, 1);
+  }
+
+  & span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.4, 1, 0.8, 1);
+  }
+
+  &:hover span {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+}
+
+
+svg:not([width]):not([height]) {
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
+* {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
