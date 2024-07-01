@@ -1,0 +1,99 @@
+---
+title: Kristina Kliwer // Web Developer Frontend/UI
+description: Web Developer mit Schwerpunkt Frontend/UI und einer Affinität für A11y und Progressive Enhancement
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="preload" href="/fonts/anton-v25-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/crimson-text-v19-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/crimson-text-v19-latin-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/crimson-text-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#e4e2dd">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+      <div class="container">
+        <a href="#skip" class="visually-hidden">Skip to main content</a>
+
+        <header class="header">
+            <a href="/" class="logo">
+                <span class="visually-hidden">Kristina Kliwer Logo</span>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" zoomAndPan="magnify" viewBox="0 0 375 262.499992" height="70" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><g/><clipPath id="bd10fc27d1"><path d="M 327.078125 183.183594 L 368.429688 183.183594 L 368.429688 224.53125 L 327.078125 224.53125 Z M 327.078125 183.183594 " clip-rule="nonzero"/></clipPath><clipPath id="5fb125980d"><path d="M 347.753906 183.183594 C 336.332031 183.183594 327.078125 192.4375 327.078125 203.859375 C 327.078125 215.277344 336.332031 224.53125 347.753906 224.53125 C 359.171875 224.53125 368.429688 215.277344 368.429688 203.859375 C 368.429688 192.4375 359.171875 183.183594 347.753906 183.183594 Z M 347.753906 183.183594 " clip-rule="nonzero"/></clipPath></defs><g fill="#222222" fill-opacity="1"><g transform="translate(6.130069, 221.055904)"><g><path d="M 7.0625 0 L 7.0625 -174.390625 L 41.984375 -174.390625 L 41.984375 -96.890625 L 58.9375 -147.75 L 95.46875 -147.75 L 73.265625 -83.5625 L 101.53125 0 L 63.984375 0 L 41.984375 -69.640625 L 41.984375 0 Z M 7.0625 0 "/></g></g></g><g fill="#222222" fill-opacity="1"><g transform="translate(94.13233, 221.055904)"><g><path d="M 7.0625 0 L 7.0625 -174.390625 L 43 -174.390625 L 43 0 Z M 7.0625 0 "/></g></g></g><g fill="#222222" fill-opacity="1"><g transform="translate(133.086996, 221.055904)"><g><path d="M 22.609375 0 L 4.640625 -147.75 L 34.921875 -147.75 L 44.8125 -68.421875 L 53.28125 -147.75 L 84.171875 -147.75 L 94.265625 -68.421875 L 102.53125 -147.75 L 135.84375 -147.75 L 116.875 0 L 81.546875 0 L 71.046875 -83.96875 L 61.765625 0 Z M 22.609375 0 "/></g></g></g><g fill="#222222" fill-opacity="1"><g transform="translate(262.466845, 221.055904)"><g><path d="M 7.0625 -147.75 L 42.390625 -147.75 L 42.390625 -131.40625 C 44.140625 -137.1875 47.195312 -141.65625 51.5625 -144.8125 C 55.9375 -147.976562 61.351562 -149.5625 67.8125 -149.5625 L 67.8125 -120.09375 C 62.832031 -120.09375 57.347656 -119.382812 51.359375 -117.96875 C 45.378906 -116.5625 42.390625 -114.914062 42.390625 -113.03125 L 42.390625 0 L 7.0625 0 Z M 7.0625 -147.75 "/></g></g></g><g clip-path="url(#bd10fc27d1)"><g clip-path="url(#5fb125980d)"><path fill="#222222" d="M 327.078125 183.183594 L 368.429688 183.183594 L 368.429688 224.53125 L 327.078125 224.53125 Z M 327.078125 183.183594 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+            </a>
+
+            <nav class="nav-container">
+                <h2 class="visually-hidden">Top level navigation menu</h2>
+                <ul class="nav">
+                {%- for entry in collections.all | eleventyNavigation %}
+                    <li class="nav-item">
+                    <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>
+                    <span>{{ entry.title }}</span>
+                    </a>
+                    </li>
+                {%- endfor %}
+                </ul>
+            </nav>
+        </header>
+
+        <main id="skip" class="s-flow">
+            {{ content | safe }}
+        </main>
+
+        <footer class="footer">
+            <div>
+                ©2024 Kristina Kliwer
+                •
+                Made with 🖤 & <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">11ty</a>
+            </div>
+            <div>
+                <ul class="footer-nav">
+                    <li class="footer-nav-item">
+                        <a href="https://www.flickr.com/photos/200972178@N03/">
+                            <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="-143 145 512 512" xml:space="preserve">
+                                <path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M41.4,457.4  C10.3,457.4-15,432.1-15,401c0-31.1,25.2-56.4,56.4-56.4c31.2,0,56.4,25.3,56.4,56.4C97.8,432.1,72.6,457.4,41.4,457.4z   M184.6,457.4c-31.2,0-56.4-25.3-56.4-56.4c0-31.1,25.2-56.4,56.4-56.4c31.1,0,56.4,25.3,56.4,56.4  C241,432.1,215.8,457.4,184.6,457.4z"/>
+                            </svg>
+                            <span class="visually-hidden">Flickr</Span>
+                        </a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="https://www.xing.com/profile/Kristina_Kliwer">
+                            <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            	<path d="M77.7,101.5c-4.7,0-8.4,1.9-10.2,4.7c-1.9,2.8-1.9,7.4,0,11.2l50.3,86.6l0,0L39.6,342.6   c-1.9,3.7-1.9,8.4,0,11.2s5.6,4.7,9.3,4.7h73.5c11.2,0,16.8-7.4,20.5-14c0,0,76.3-135.9,80.1-140.6l-51.2-89.4   c-3.7-6.5-9.3-14-20.5-14H77.7V101.5z"/>
+                            	<path d="M387.7,0c-11.2,0-15.8,6.5-19.5,14c0,0-159.2,282.1-163.8,291.4L308.6,498c3.7,6.5,9.3,14,20.5,14h73.5   c4.7,0,7.4-1.9,10.2-4.7c1.9-2.8,1.9-7.4,0-11.2L308.6,305.3v-0.9L472.4,15.8c1.9-3.7,1.9-8.4,0-11.2c-1.9-2.8-5.6-4.7-10.2-4.7   H387.7L387.7,0z"/>
+                            </svg>
+                            <span class="visually-hidden">Xing</Span>
+                        </a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="https://www.linkedin.com/in/kristina-kliwer-38ba49313/">
+                            <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" width="1792" height="1792" viewBox="0 0 1792 1792"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg>
+                            <span class="visually-hidden">LinkedIn</Span>
+                        </a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="https://github.com/kristinakliwer">
+                            <svg height="30" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="30">
+                                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                            </svg>
+                            <span class="visually-hidden">GitHub</Span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+      </div>
+  </body>
+</html>
