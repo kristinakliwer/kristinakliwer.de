@@ -1,0 +1,10 @@
+---
+layout: base.njk
+title: Blog - Kristina Kliwer, Web Developer mit Schwerpunkt Frontend/UI
+description: Hi, ich bin Kristina! Web Developer mit Schwerpunkt Frontend/UI und einer Affinität für A11y und Progressive Enhancement. Das ist meine persönliche Website.
+eleventyNavigation:
+  key: Blog
+---
+
+<h1>{{ title }}</h1>
+
